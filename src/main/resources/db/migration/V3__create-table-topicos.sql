@@ -1,0 +1,12 @@
+CREATE TABLE topicos (
+    idTopico BIGINT NOT NULL AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL UNIQUE,
+    mensaje VARCHAR(300) NOT NULL UNIQUE,
+    fechaCreacion DATETIME NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    idAutor BIGINT NOT NULL,
+    idCurso BIGINT NOT NULL,
+    PRIMARY KEY (idTopico),
+    FOREIGN KEY(idAutor) REFERENCES usuarios(idUsuario) ON DELETE CASCADE,
+    FOREIGN KEY(idCurso) REFERENCES cursos(idCurso) ON DELETE CASCADE
+);
