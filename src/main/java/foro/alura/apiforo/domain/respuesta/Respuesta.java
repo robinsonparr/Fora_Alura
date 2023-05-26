@@ -24,7 +24,13 @@ public class Respuesta {
     private String mensaje;
     private LocalDateTime fechaCreacion = LocalDateTime.now();
     private Boolean solucion = false;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idTopico")
     private Topico topico;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idAutor")
     private Usuario autor;
 
 

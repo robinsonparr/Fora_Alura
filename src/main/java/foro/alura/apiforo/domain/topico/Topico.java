@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.NavigableMap;
 import java.util.Set;
 
 @Entity(name = "Topico")
@@ -25,12 +24,25 @@ public class Topico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idTopico;
+
     private String titulo;
-    private String mensjae;
+
+    private String mensaje;
+
     private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    @Enumerated(EnumType.STRING)
     private StatusTopico estado = StatusTopico.NO_RESPONDIDO;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idAutor")
     private Usuario autor;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idCurso")
     private Curso curso;
+
+   @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL)
     private Set<Respuesta> respuesta = new HashSet<>();
 
 
