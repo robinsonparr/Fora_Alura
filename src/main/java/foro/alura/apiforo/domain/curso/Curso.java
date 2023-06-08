@@ -21,5 +21,22 @@ public class Curso {
     private String nombre;
     private String categoria;
 
+    public Curso(Long cursoId) {
+        this.idCurso = cursoId;
+    }
+
+    public Curso(RegistroCurso registroCurso) {
+        this.nombre = registroCurso.nombre();
+        this.categoria = registroCurso.categoria();
+    }
+
+    public void actualizarDatos(ActualizarCurso actualizarCurso) {
+        if (actualizarCurso.nombre() != null) {
+            this.nombre = actualizarCurso.nombre();
+        }
+        if (actualizarCurso.categoria() != null) {
+            this.categoria = actualizarCurso.categoria();
+        }
+    }
 
 }

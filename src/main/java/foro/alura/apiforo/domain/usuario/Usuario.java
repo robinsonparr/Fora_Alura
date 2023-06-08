@@ -31,6 +31,9 @@ public class Usuario implements UserDetails {
     private String email;
     private String contrasena;
 
+    public Usuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
@@ -73,7 +76,7 @@ public class Usuario implements UserDetails {
         this.email = registroUsuario.email();
         this.contrasena = registroUsuario.contrasena();
     }
-    public void actualizar(ActualizarUusario actualizarUsuario){
+    public void actualizar(ActualizarUsuario actualizarUsuario){
         if (actualizarUsuario.nombre() != null){
             this.nombre = actualizarUsuario.nombre();
         }

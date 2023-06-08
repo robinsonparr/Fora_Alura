@@ -45,5 +45,35 @@ public class Topico {
    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL)
     private Set<Respuesta> respuesta = new HashSet<>();
 
+    public Topico(Long idTopico) {
+        this.idTopico = idTopico;
+    }
+
+    public Topico(RegistroTopico registroTopico) {
+        this.titulo = registroTopico.titulo();
+        this.mensaje = registroTopico.mensaje();
+        this.estado = registroTopico.estado();
+        this.autor = new Usuario(registroTopico.autor());
+        this.curso = new Curso(registroTopico.curso());
+    }
+
+    public void actualizarDatos(ActualizarTopico actualizarTopico) {
+        if (actualizarTopico.titulo() != null) {
+            this.titulo = actualizarTopico.titulo();
+        }
+        if (actualizarTopico.mensaje() != null) {
+            this.mensaje = actualizarTopico.mensaje();
+        }
+        if (actualizarTopico.estado() != null) {
+            this.estado = actualizarTopico.estado();
+        }
+        if (actualizarTopico.autor() != null) {
+            this.autor = new Usuario(actualizarTopico.autor());
+        }
+        if (actualizarTopico.curso() != null) {
+            this.curso = new Curso(actualizarTopico.curso());
+        }
+    }
 
 }
+

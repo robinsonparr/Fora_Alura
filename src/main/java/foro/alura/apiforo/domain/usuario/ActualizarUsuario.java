@@ -2,9 +2,9 @@ package foro.alura.apiforo.domain.usuario;
 
 import jakarta.validation.constraints.NotNull;
 
-public record ActualizarUusario(
+public record ActualizarUsuario(
         @NotNull
-        Long id,
+        Long idUsuario,
         String nombre,
         String email,
         String contrasena) {

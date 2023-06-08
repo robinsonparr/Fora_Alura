@@ -34,4 +34,25 @@ public class Respuesta {
     private Usuario autor;
 
 
+    public Respuesta(RegistroRespuesta registroRespuesta) {
+        this.mensaje = registroRespuesta.mensaje();
+        this.topico = new Topico(registroRespuesta.topico());
+        this.autor = new Usuario(registroRespuesta.autor());
+    }
+
+    public void actualizarDatos(ActualizarRespuesta actualizarRespuesta) {
+        if (actualizarRespuesta.mensaje() != null) {
+            this.mensaje = actualizarRespuesta.mensaje();
+        }
+        if (actualizarRespuesta.solucion() != null) {
+            this.solucion = actualizarRespuesta.solucion();
+        }
+        if (actualizarRespuesta.topico() != null) {
+            this.topico = new Topico(actualizarRespuesta.topico());
+        }
+        if (actualizarRespuesta.autor() != null) {
+            this.autor = new Usuario(actualizarRespuesta.autor());
+        }
+    }
+
 }
