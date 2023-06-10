@@ -1,10 +1,6 @@
 package foro.alura.apiforo.domain.usuario;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -26,9 +22,16 @@ import java.util.List;
 public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idUsuario")
     private Long idUsuario;
+
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "contrasena")
     private String contrasena;
 
     public Usuario(Long idUsuario) {

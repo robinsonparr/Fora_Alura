@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/login")
 public class AutenticacionController {
 
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
     @Autowired
-    private TokenService tokenService;
+    private  final TokenService tokenService;
 
 
     public AutenticacionController(AuthenticationManager authenticationManager, TokenService tokenService){
