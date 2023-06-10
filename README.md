@@ -1,8 +1,7 @@
-
 ---
+![foro](https://github.com/robinsonparr/Fora_Alura/assets/119555055/a1678a8b-07e9-4c32-bf9b-80eb9a85561e)
 
    <h1>
-      <img src="./readme-img/Inicio.png" alt="Foro alura" width="100" height="100"/>
       <p align="left">FORO ALURA</p>
       <p align="right">
          <img src="http://img.shields.io/static/v1?label=STATUS&message=EN DESARROLLO%20&color=RED&style=for-the-badge" #vitrinedev style="border-radius:25px"/>
@@ -11,16 +10,11 @@
 
 ---
 
+
 ## Tópicos
 
 - [Descripción del proyecto](#descripción-del-proyecto)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
-
-
-
-
-
-
 
 ---
 
@@ -47,6 +41,7 @@ También contará con búsquedas personalizadas como:
 * Búsqueda de un tópico o respuesta por id de un autor.
 * Búsqueda de una respuesta por id de un tópico.
 </p>
+
 
 ## Tecnologias utilizadas
 
